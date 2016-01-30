@@ -6,16 +6,19 @@ package extending;
 
 class Second{
     private String s = "Second";
-    public void append(String a){s+=a;}
-    public void scrub(){append(" scrub()");}
+    void append(String a){s+=a;}
+    void scrub(){append(" scrub()");}
     public String toString(){return s;}
 }
 
-public class First extends Second{
+public class First {
+    Second second = new Second();
+    public void append(String s){second.append(s);}
    public void scrub(){
-       append(" First.scrub()");
+       second.scrub();
       // super.scrub();
    }
+    public String toString(){return second.toString();}
     public void sterilize(){append(" sterilize()");}
 
     public static void main(String[] args) {

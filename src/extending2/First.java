@@ -9,9 +9,14 @@ public class First {
     }
 }
 class Second extends First{
-    public Second(double f) {
+  /*  public Second(double f) {
         super(11);
         System.out.println("Second "+f);
+    }*/
+    public Second(int p){
+        super(3);
+
+
     }
 }
 class Third extends Second{
