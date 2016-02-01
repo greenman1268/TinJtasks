@@ -7,10 +7,10 @@ public class First {
     void method(int i){
         System.out.println(i);
     }
-    void method(char c){
+    void method1(char c){
         System.out.println(c);
     }
-    void method(float p){
+    void method2(float p){
         System.out.println(p);
     }
     public String toString(){
@@ -18,15 +18,14 @@ public class First {
     }
 }
 class Second extends First{
-    @Override
-    void method (int i){
-        System.out.println(i);
-    }
+
 
     public static void main(String[] args) {
         Second second = new Second();
-        second.method('p');
-        second.method((float)23.333);
+        First f = second;
+
+        second.method1('p');
+        second.method2((float) 23.333);
         second.method(1);
     }
 }
