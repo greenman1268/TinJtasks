@@ -1,4 +1,4 @@
-package constants;
+package lyrics.constants;
 
 /**
  * Created by Grisha on 30.01.2016.

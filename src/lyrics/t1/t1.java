@@ -1,11 +1,8 @@
-package Chapter2.t1;
+package lyrics.t1;
 
 /**
  * Created by Grisha on 24.01.2016.
  */
-
-import Chapter3.*;
-import java.util.*;
 
 
 public class t1{

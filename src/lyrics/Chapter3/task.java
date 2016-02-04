@@ -1,12 +1,8 @@
-package Chapter3;
+package lyrics.Chapter3;
 
-import java.util.Random;
-import Chapter2.t1.*;
-//import debug.Debug;
-//import debugoff.DebugOff;
+//import lyrics.debug.Debug;
+//import lyrics.debugoff.DebugOff;
 
-import static debug.Debug.debug;
-import static debugoff.DebugOff.debugoff;
 /**
  * Created by Grisha on 24.01.2016.
  */

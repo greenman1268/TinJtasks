@@ -1,4 +1,4 @@
-package polymorphism;
+package lyrics.polymorphism;
 
 /**
  * Created by Grisha on 31.01.2016.

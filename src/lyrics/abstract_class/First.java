@@ -1,4 +1,4 @@
-package abstract_class;
+package lyrics.abstract_class;
 
 /**
  * Created by Grisha on 01.02.2016.

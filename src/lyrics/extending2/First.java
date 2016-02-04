@@ -1,4 +1,4 @@
-package extending2;
+package lyrics.extending2;
 
 /**
  * Created by Grisha on 30.01.2016.

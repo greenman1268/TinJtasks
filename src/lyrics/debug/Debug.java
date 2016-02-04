@@ -1,4 +1,4 @@
-package debug;
+package lyrics.debug;
 
 /**
  * Created by Grisha on 28.01.2016.
