@@ -7,7 +7,7 @@ import java.util.*;
  */
 public class GreenhousController {
     public static void main(String[] args) {
-        /*GreenhouseControls gc = new GreenhouseControls();
+        GreenhouseControls gc = new GreenhouseControls();
 
         gc.addEvent(gc.new Bell(900));
         Event[] events = {
@@ -20,9 +20,9 @@ public class GreenhousController {
         gc.addEvent(gc.new Restart(2000, events));
         if(args.length == 1){
             gc.addEvent(new GreenhouseControls.Terminate(new Integer(args[0])));gc.run();
-        }*/
+        }
 
-        System.out.println("IT'S TIME FOR NEW VERSION");
+     /*   System.out.println("IT'S TIME FOR NEW VERSION");
         GC2 gc2 = new GC2();
 
         gc2.addEvent(gc2.new Bell(1000));
@@ -37,7 +37,7 @@ public class GreenhousController {
         gc2.addEvent(gc2.new Restart(20000, events2));
         if(args.length == 1){
            gc2.addEvent(new GC2.Terminate(new Integer(args[0])));gc2.run();
-        }
+        }*/
     }
 }
 
@@ -79,16 +79,18 @@ abstract class Event{
 }
 
 class Controller {
-    private List<Event> eventList = new ArrayList<Event>();
+    private List<Event> eventList = new LinkedList<Event>();
     public void addEvent(Event c){eventList.add(c);}
     public void run(){
+        Iterator<Event> iter = new LinkedList<Event>(eventList).iterator();
         while (eventList.size()>0)
-            for (Event e : new ArrayList<Event>(eventList))
+            while (iter.hasNext()){
+                Event e = iter.next();
                 if(e.ready()){
                     System.out.println(e);
                     e.action();
                     eventList.remove(e);
-                }
+                }}
     }
 }
 
