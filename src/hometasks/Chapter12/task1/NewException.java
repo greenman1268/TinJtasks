@@ -6,7 +6,7 @@ package hometasks.Chapter12.task1;
 //372.1
 public class NewException {
     public static void main(String[] args) {
-        int i = -2;
+     /*   int i = -2;
         while (i<10){
             try {
                 System.out.println(2/++i);
@@ -26,11 +26,16 @@ public class NewException {
            // s.length();
            /* int[] k = new int[5];
             k[6] = 10;*/
-           // throw new MyExeption("it's new exception");
-               }
+        // throw new MyExeption("it's new exception");
+        try {
+            new Test().test();
+        } catch (MyExeption myExeption) {
+            myExeption.printStackTrace();
+        }
+    }
       /*  catch (MyExeption e){
             System.out.println(e.getMessage());
-        }*/
+        }
         catch (ArrayIndexOutOfBoundsException e){
             System.out.println("it's "+e);
         }
@@ -44,7 +49,8 @@ public class NewException {
         finally {
             System.out.println("It's finally");
         }
-    }
+    }*/
+
 }
 
 class MyExeption extends Exception{
@@ -58,4 +64,8 @@ class MyExeption extends Exception{
 
         return message;
     }
+}
+
+class Test{
+    public static void test()throws MyExeption{throw new MyExeption("message");}
 }
