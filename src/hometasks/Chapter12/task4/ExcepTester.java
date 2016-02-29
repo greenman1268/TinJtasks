@@ -17,27 +17,34 @@ public class ExcepTester {
     public static void main(String[] args) {
         try {
             caller();
-        } catch (Exception excep) {
+        }catch (NullPointerException e){
+            System.out.println("nullpointer");
+            e.printStackTrace();
+        }
+        catch (Exception excep) {
             excep.printStackTrace();
         } /*catch (Excep2 excep2) {
             excep2.printStackTrace();
         } catch (Excep3 excep3) {
             excep3.printStackTrace();
         }*/
+        finally {
+            System.out.println("This is finally");
+        }
     }
 }
 
-class Excep1 extends Exception{
+class Excep1 extends NullPointerException{
     public Excep1(String message) {
         super(message);
     }
 }
-class Excep2 extends Exception{
+class Excep2 extends NullPointerException{
     public Excep2(String message) {
         super(message);
     }
 }
-class Excep3 extends Exception{
+class Excep3 extends NullPointerException{
     public Excep3(String message) {
         super(message);
     }
