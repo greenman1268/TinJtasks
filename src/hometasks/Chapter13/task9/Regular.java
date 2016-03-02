@@ -6,6 +6,7 @@ import java.util.regex.Pattern;
 /**
  * Created by Grisha on 01.03.2016.
  */
+//436
 public class Regular {
     public static void main(String[] args) {
         String[] regex = {"^Java","\\Breg.*","n.w\\s+h(a|i)s","s?","s*","s+","s{4}","s{1}.","s{0,3}"};
