@@ -8,7 +8,7 @@ public class IsCharacter {
     public static void main(String[] args) {
         char[] p = {'k','p','s'};
 
-        System.out.println("p is PRIMITIVE? "+p.getClass().isPrimitive());
+        System.out.println("p is PRIMITIVE ? "+p.getClass().isPrimitive());
         System.out.println("p is real Object? "+p.getClass().isInstance(Character.class));
     }
 }
