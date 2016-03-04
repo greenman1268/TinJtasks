@@ -90,8 +90,8 @@ class PowerSteeringBelt extends Belt {
 
 public class RegisteredFactories {
   public static void main(String[] args) {
-    for(int i = 0; i < 10; i++)
-      System.out.println(Part.createRandom());
+   PartCreator partCreator = new LiteralPartCreator();
+    System.out.println(partCreator.arrayList(10));
   }
 } /* Output:
 GeneratorBelt
