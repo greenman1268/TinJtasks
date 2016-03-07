@@ -6,6 +6,6 @@ package hometasks.Chapter13.task24.control;
 public class PetCount2 {
 
     public static void main(String[] args) {
-        PetCount.countPets(Pets.creator);
+       // PetCount.countPets(Pets.creator);
     }
 }
