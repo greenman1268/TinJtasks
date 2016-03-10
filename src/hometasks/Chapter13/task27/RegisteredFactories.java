@@ -1,9 +1,8 @@
 package hometasks.Chapter13.task27;
 // Registering Class Factories in the base class.
-import java.lang.reflect.*;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
-import java.util.*;
+import java.lang.reflect.Proxy;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -93,22 +92,39 @@ class PowerSteeringBelt extends Belt {
 
 class NullPartProxyHandler implements InvocationHandler{
 
+  private Factory<Npart> proxied = new Npart();
+  public NullPartProxyHandler(Factory<? extends Part> type){}
   @Override
   public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-    return null;
+    return method.invoke(proxied,args);
+  }
+
+  private class Npart extends Part implements Factory<Npart>{
+    @Override
+    public Npart create() {
+      return new Npart();
+    }
   }
 }
 
 class NullPart{
-  public static Part newNullPart (Class<? extends Part> type){
-    return (Part)new Proxy.newProxyInstance();
+  public static Factory<? extends Part> newNullPart (Factory<? extends Part> type){
+    return (Factory<? extends Part>)Proxy.newProxyInstance(
+            NullPart.class.getClassLoader(),
+            new Class[]{Factory.class},
+            new NullPartProxyHandler(type));
   }
 }
 
 public class RegisteredFactories {
   public static void main(String[] args) {
-    for(int i = 0; i < 10; i++)
-      System.out.println(Part.createRandom());
+    List<Factory<? extends Part>> list = new ArrayList();
+    list.add(new PowerSteeringBelt.Factory());
+    list.add(NullPart.newNullPart(new GeneratorBelt.Factory()));
+
+    for (Factory<? extends Part> f : list){
+      System.out.println(f.create());
+    }
   }
 } /* Output:
 GeneratorBelt
