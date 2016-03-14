@@ -1,5 +1,5 @@
 //: net/mindview/util/Sets.java
-package hometasks.Chapter14.test10;
+package hometasks.Chapter14.task10;
 
 import java.util.*;
 
